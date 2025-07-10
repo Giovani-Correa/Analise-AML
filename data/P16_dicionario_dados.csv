@@ -1,0 +1,18 @@
+tabela,coluna,tipo,descricao
+clientes_agencia_londrina,id_cliente,string,Identificador único do cliente
+clientes_agencia_londrina,nome,string,Nome completo do cliente
+clientes_agencia_londrina,data_nascimento,date,Data de nascimento do cliente
+clientes_agencia_londrina,cidade_residencia,string,Cidade de residência principal do cliente
+clientes_agencia_londrina,tipo_conta,string,"Tipo de conta do cliente (Corrente, Poupança ou Empresarial)"
+clientes_agencia_londrina,pessoa_fisica,string,Indica se a conta é de pessoa física (Sim/Não)
+clientes_agencia_londrina,score_credito,integer,Score de crédito do cliente (escala de 300 a 900)
+transacoes,id_transacao,string,Identificador único da transação
+transacoes,id_cliente_origem,string,ID do cliente que originou a transação
+transacoes,id_cliente_destino,string,ID do destinatário (pode ser externo ou cliente da agência)
+transacoes,data_transacao,datetime,Data e hora da transação
+transacoes,valor,float,Valor monetário da transação em reais
+transacoes,canal,string,"Canal utilizado para a transação (PIX, TED, DOC, etc.)"
+transacoes,cidade_transacao,string,Cidade onde a transação foi realizada
+transacoes,cidade_origem,string,Cidade de residência do cliente que originou a transação
+transacoes,flag_suspeita,integer (0/1),"Indica se a transação é considerada suspeita (1 = sim, 0 = não)"
+transacoes,flag_fraude_confirmada,integer (0/1),"Indica se a transação foi confirmada como fraude (1 = sim, 0 = não)"
