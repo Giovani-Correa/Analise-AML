@@ -13,17 +13,17 @@ port = os.getenv("DB_PORT")
 default_db = os.getenv("DB_DEFAULT")
 db_name = os.getenv("DB_NAME")
 
-# Criar banco BANKING
-try:
-    conn = psycopg2.connect(dbname=default_db, user=user, password=password, host=host, port=port)
-    conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
-    cur = conn.cursor()
-    cur.execute(f'CREATE DATABASE "{db_name}"')
-    print(f" Banco '{db_name}' criado.")
-    cur.close()
-    conn.close()
-except Exception as e:
-    print(" Banco já existe ou erro:", e)
+# # Criar banco BANKING
+# try:
+#     conn = psycopg2.connect(dbname=default_db, user=user, password=password, host=host, port=port)
+#     conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
+#     cur = conn.cursor()
+#     cur.execute(f'CREATE DATABASE "{db_name}"')
+#     print(f" Banco '{db_name}' criado.")
+#     cur.close()
+#     conn.close()
+# except Exception as e:
+#     print(" Banco já existe ou erro:", e)
 
 # Conectar ao banco BANKING
 try:
