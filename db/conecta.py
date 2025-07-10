@@ -5,7 +5,7 @@ import os
 load_dotenv()  # carrega o .env da mesma pasta do script
 
 host = os.getenv("MYSQL_HOST")
-port = int(os.getenv("MYSQL_PORT"))  # erro vinha daqui
+port = int(os.getenv("MYSQL_PORT"))  
 user = os.getenv("MYSQL_USER")
 password = os.getenv("MYSQL_PASSWORD")
 database = os.getenv("MYSQL_DATABASE")
@@ -18,7 +18,7 @@ try:
         password=password,
         database=database
     )
-    print(f"✅ Conectado ao banco '{database}' no servidor {host}:{port}")
+    print(f"Conectado ao banco '{database}' no servidor {host}:{port}")
 
     cursor = conn.cursor()
     cursor.execute("SHOW TABLES;")
@@ -29,4 +29,4 @@ try:
     conn.close()
 
 except mysql.connector.Error as e:
-    print("❌ Erro ao conectar:", e)
+    print("Erro ao conectar:", e)
