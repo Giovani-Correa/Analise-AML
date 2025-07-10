@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 import os
 
 # Carregar .env do caminho correto
-load_dotenv(dotenv_path="db\.env")  
+load_dotenv(dotenv_path="./db/.env")  
 
 user = os.getenv("DB_USER")
 password = os.getenv("DB_PASSWORD")
