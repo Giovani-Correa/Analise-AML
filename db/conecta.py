@@ -1,34 +1,32 @@
-import psycopg2
-from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
+import mysql.connector
 from dotenv import load_dotenv
 import os
 
-# Carregar .env do caminho correto
-load_dotenv(dotenv_path="./db/.env")  
+load_dotenv()  # carrega o .env da mesma pasta do script
 
-user = os.getenv("DB_USER")
-password = os.getenv("DB_PASSWORD")
-host = os.getenv("DB_HOST")
-port = os.getenv("DB_PORT")
-default_db = os.getenv("DB_DEFAULT")
-db_name = os.getenv("DB_NAME")
+host = os.getenv("MYSQL_HOST")
+port = int(os.getenv("MYSQL_PORT"))  # erro vinha daqui
+user = os.getenv("MYSQL_USER")
+password = os.getenv("MYSQL_PASSWORD")
+database = os.getenv("MYSQL_DATABASE")
 
-# # Criar banco BANKING
-# try:
-#     conn = psycopg2.connect(dbname=default_db, user=user, password=password, host=host, port=port)
-#     conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT)
-#     cur = conn.cursor()
-#     cur.execute(f'CREATE DATABASE "{db_name}"')
-#     print(f" Banco '{db_name}' criado.")
-#     cur.close()
-#     conn.close()
-# except Exception as e:
-#     print(" Banco já existe ou erro:", e)
-
-# Conectar ao banco BANKING
 try:
-    conn = psycopg2.connect(dbname=db_name, user=user, password=password, host=host, port=port)
-    print(f" Conectado ao banco '{db_name}'.")
+    conn = mysql.connector.connect(
+        host=host,
+        port=port,
+        user=user,
+        password=password,
+        database=database
+    )
+    print(f"✅ Conectado ao banco '{database}' no servidor {host}:{port}")
+
+    cursor = conn.cursor()
+    cursor.execute("SHOW TABLES;")
+    for table in cursor.fetchall():
+        print(f"- {table[0]}")
+
+    cursor.close()
     conn.close()
-except Exception as e:
-    print(" Erro ao conectar:", e)
+
+except mysql.connector.Error as e:
+    print("❌ Erro ao conectar:", e)
