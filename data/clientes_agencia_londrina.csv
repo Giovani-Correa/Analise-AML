@@ -1,5 +1,5 @@
 id_cliente,nome,data_nascimento,cidade_residencia,tipo_conta,pessoa_fisica,score_credito
-C074,Gabrielly Rocha,1977-02-19,Londrina,Corrente,Sim,659
+C074,Gabrielly Rocha,EXT995,Londrina,Corrente,Sim,659
 C019,Gustavo Henrique Peixoto,1976-03-20,Londrina,Corrente,Sim,708
 C119,Pedro Lucas Cunha,1972-03-25,Rolândia,Empresarial,Não,630
 C079,Francisco Cavalcanti,1971-04-04,Londrina,Empresarial,Não,561
@@ -12,7 +12,7 @@ C083,Maria Luiza Rocha,1998-04-15,Londrina,Poupança,Sim,703
 C111,Sabrina da Rosa,1983-04-05,Ortigueira,Poupança,Sim,462
 C013,Luiz Miguel Pinto,1993-02-27,Londrina,Empresarial,Não,772
 C037,Vitor Dias,1972-09-28,Londrina,Corrente,Sim,589
-C010,Rafael Aragão,1965-08-01,Londrina,Corrente,Sim,614
+C010,Rafael Aragão,EXT567,Londrina,Corrente,Sim,614
 C020,Daniel Lima,1999-02-05,Londrina,Corrente,Sim,657
 C057,Milena Castro,1971-11-12,Londrina,Corrente,Sim,745
 C105,Lara Gomes,2005-04-06,Londrina,Empresarial,Não,744
@@ -22,7 +22,7 @@ C133,Joana da Cunha,1974-02-14,Ortigueira,Empresarial,Não,759
 C030,Beatriz Lopes,1956-01-29,Londrina,Empresarial,Não,635
 C128,Raquel Ribeiro,2002-07-03,Bandeirantes,Empresarial,Não,461
 C027,Ana Carolina da Conceição,1978-02-08,Londrina,Empresarial,Não,713
-C129,Sr. João Felipe Nogueira,2006-03-31,Jataizinho,Empresarial,Não,615
+C129,Sr. João Felipe Nogueira,EXT706,Jataizinho,Empresarial,Não,615
 C132,Sra. Isabella Nogueira,1986-11-11,Rolândia,Empresarial,Não,571
 C146,Maria Sophia Pereira,1982-05-23,Assaí,Empresarial,Não,792
 C109,Dr. Benjamin Lima,1955-05-01,Arapongas,Corrente,Sim,528
