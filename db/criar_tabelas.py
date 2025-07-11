@@ -21,7 +21,7 @@ conn = mysql.connector.connect(
 cursor = conn.cursor()
 cursor.execute(""" 
 
-    CREATE TABLE cliente (
+    CREATE TABLE IF NOT EXISTS cliente (
         id_cliente VARCHAR(50) PRIMARY KEY NOT NULL,
         nome VARCHAR(50) NOT NULL,
         data_nascimento DATE NOT NULL,
@@ -31,10 +31,10 @@ cursor.execute("""
         score_credito INT(3) NOT NULL
     );
 
-    CREATE TABLE transacao (
+    CREATE TABLE IF NOT EXISTS transacao (
         id_transacao VARCHAR(50) PRIMARY KEY NOT NULL,
         id_cliente_origem VARCHAR(50) NOT NULL,
-    --	id_cliente_destino varchar(50) not null,
+        id_cliente_destino VARCHAR(50) NOT NULL,
         data_transacao DATETIME NOT NULL,
         valor DECIMAL(10,2) NOT NULL,
         canal VARCHAR(50) NOT NULL,
@@ -45,6 +45,5 @@ cursor.execute("""
         mes VARCHAR(10) NOT NULL,
         FOREIGN KEY (id_cliente_origem) REFERENCES cliente(id_cliente)
     );
-
 """)
 
