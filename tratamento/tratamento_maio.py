@@ -10,9 +10,6 @@ print(df_maio.isna().sum())
 existe_duplicatas = df_maio['id_transacao'].duplicated().any()
 print(f"Duplicatas: {existe_duplicatas}")
 
-# Adicionar coluna 'mes' com valor 'maio'
-df_maio['mes'] = 'maio'
-print(df_maio)
 
 # Verificar nomes inconsistentes nas colunas 'cidade_transacao', 'canal' e 'cidade_origem'
 print(df_maio['cidade_transacao'].unique())
@@ -34,6 +31,12 @@ ids_validos = set(df_clientes['id_cliente'])
 df_maio = df_maio[
     df_maio['id_cliente_origem'].isin(ids_validos) 
 ]
+
+meses_unicos = df_maio['data_transacao'].dt.month.unique()
+anos_unicos = df_maio['data_transacao'].dt.year.unique()
+
+print("Meses encontrados:", meses_unicos)
+print("Anos encontrados:", anos_unicos)
 
 
 # Salvar o DataFrame limpo em um novo arquivo CSV

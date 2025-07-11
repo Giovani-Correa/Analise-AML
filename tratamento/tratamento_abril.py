@@ -12,10 +12,6 @@ print(df_abril.isna().sum())
 duplicatas_abril = df_abril['id_transacao'].duplicated().any()
 print(f"Duplicatas: {duplicatas_abril}")
 
-# Adicionar coluna 'mes' com valor 'abril'
-df_abril['mes'] = 'abril'
-print(df_abril)
-
 # Verificar nomes inconsistentes nas colunas 'cidade_transacao', 'canal' e 'cidade_origem'
 print(df_abril['cidade_transacao'].unique())
 
@@ -37,6 +33,14 @@ ids_validos = set(df_clientes['id_cliente'])
 df_abril = df_abril[
     df_abril['id_cliente_origem'].isin(ids_validos)
 ]
+
+# Adicionar coluna com o número do mês
+meses_unicos = df_abril['data_transacao'].dt.month.unique()
+anos_unicos = df_abril['data_transacao'].dt.year.unique()
+
+print("Meses encontrados:", meses_unicos)
+print("Anos encontrados:", anos_unicos)
+
 
 
 # # Salvar o DataFrame limpo em um novo arquivo CSV

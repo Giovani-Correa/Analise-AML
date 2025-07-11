@@ -13,9 +13,7 @@ print(df_junho.isna().sum())
 existe_duplicatas = df_junho['id_transacao'].duplicated().any()
 print(f"Duplicatas: {existe_duplicatas}")
 
-# Adicionar coluna 'mes' com valor 'junho'
-df_junho['mes'] = 'junho'
-print(df_junho)
+
 
 # Verificar nomes inconsistentes nas colunas 'cidade_transacao', 'canal' e 'cidade_origem'
 print(df_junho['cidade_transacao'].unique())
@@ -37,6 +35,12 @@ ids_validos = set(df_clientes['id_cliente'])
 df_junho = df_junho[
     df_junho['id_cliente_origem'].isin(ids_validos) 
 ]
+
+meses_unicos = df_junho['data_transacao'].dt.month.unique()
+anos_unicos = df_junho['data_transacao'].dt.year.unique()
+
+print("Meses encontrados:", meses_unicos)
+print("Anos encontrados:", anos_unicos)
 
 
 # Salvar o DataFrame limpo em um novo arquivo CSV

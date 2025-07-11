@@ -42,7 +42,6 @@ cursor.execute("""
         cidade_origem VARCHAR(50) NOT NULL,
         flag_suspeita BOOLEAN NOT NULL,
         flag_fraude_confirmada BOOLEAN NOT NULL,
-        mes VARCHAR(10) NOT NULL,
         FOREIGN KEY (id_cliente_origem) REFERENCES cliente(id_cliente)
     );
 """)
