@@ -35,6 +35,7 @@ df_maio = df_maio[
     df_maio['id_cliente_origem'].isin(ids_validos) 
 ]
 
+
 # Salvar o DataFrame limpo em um novo arquivo CSV
 df_maio.to_csv('../data/data_limpos/transacoes_maio_2025_limpo.csv', index=False)
 

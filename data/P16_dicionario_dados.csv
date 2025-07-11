@@ -3,7 +3,7 @@ clientes_agencia_londrina,id_cliente,string,Identificador único do cliente
 clientes_agencia_londrina,nome,string,Nome completo do cliente
 clientes_agencia_londrina,data_nascimento,date,Data de nascimento do cliente
 clientes_agencia_londrina,cidade_residencia,string,Cidade de residência principal do cliente
-clientes_agencia_londrina,tipo_conta,string,Tipo de conta do cliente (Corrente, Poupança ou Empresarial), Poupança ou Empresarial), Poupança ou Empresarial)"
+clientes_agencia_londrina,tipo_conta,string,"Tipo de conta do cliente (Corrente, Poupança ou Empresarial)"
 clientes_agencia_londrina,pessoa_fisica,string,Indica se a conta é de pessoa física (Sim/Não)
 clientes_agencia_londrina,score_credito,integer,Score de crédito do cliente (escala de 300 a 900)
 transacoes,id_transacao,string,Identificador único da transação

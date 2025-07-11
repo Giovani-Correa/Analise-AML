@@ -39,5 +39,5 @@ df_abril = df_abril[
 ]
 
 
-# Salvar o DataFrame limpo em um novo arquivo CSV
+# # Salvar o DataFrame limpo em um novo arquivo CSV
 df_abril.to_csv('../data/data_limpos/transacoes_abril_limpo.csv', index=False)
