@@ -1,7 +1,10 @@
 import pandas as pd
 
 # ler arquivo CSV do mês de junho
-df_junho = pd.read_csv('../data/transacoes_junho_2025.csv')
+df_junho = pd.read_csv('../data/P16_transacoes_junho_2025.csv')
+
+print('Contagem de linhas da tabela ORIGINAL')
+print(df_junho.shape[0])
 
 # ler arquivo CSV do CLiente
 df_clientes = pd.read_csv('../data/data_limpos/clientes_agencia_londrina_limpo.csv')
@@ -41,6 +44,23 @@ anos_unicos = df_junho['data_transacao'].dt.year.unique()
 
 print("Meses encontrados:", meses_unicos)
 print("Anos encontrados:", anos_unicos)
+
+
+# Verificação se a coluna 'cidade origem' é mesmo redundante
+df_join = df_junho.merge(
+    df_clientes,
+    left_on='id_cliente_origem',
+    right_on='id_cliente' 
+)
+
+df_test = df_join['cidade_origem'] == df_join['cidade_residencia']
+print('Soma')
+print(df_test.sum())  # Quantas batem
+
+
+# drop na coluna 'cidade_origem'
+df_junho.drop(columns=['cidade_origem'], inplace=True)
+print(df_junho.columns)
 
 
 # Salvar o DataFrame limpo em um novo arquivo CSV

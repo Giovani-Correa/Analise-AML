@@ -39,7 +39,6 @@ cursor.execute("""
         valor DECIMAL(10,2) NOT NULL,
         canal VARCHAR(50) NOT NULL,
         cidade_transacao VARCHAR(50) NOT NULL,
-        cidade_origem VARCHAR(50) NOT NULL,
         flag_suspeita BOOLEAN NOT NULL,
         flag_fraude_confirmada BOOLEAN NOT NULL,
         FOREIGN KEY (id_cliente_origem) REFERENCES cliente(id_cliente)

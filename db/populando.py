@@ -5,7 +5,7 @@ import os
 
 df_cliente = pd.read_csv(r"C:\Users\André Ciccozzi\OneDrive\Documentos\Banking\Analise-AML\data\data_limpos\clientes_agencia_londrina_limpo.csv")
 
-df_abril = pd.read_csv(r"C:\Users\André Ciccozzi\OneDrive\Documentos\Banking\Analise-AML\data\data_limpos\transacoes_abril_limpo.csv")
+df_abril = pd.read_csv(r"C:\Users\André Ciccozzi\OneDrive\Documentos\Banking\Analise-AML\data\data_limpos\transacoes_abril_2025_limpo.csv")
 
 df_junho = pd.read_csv(r"C:\Users\André Ciccozzi\OneDrive\Documentos\Banking\Analise-AML\data\data_limpos\transacoes_junho_2025_limpo.csv")
 
@@ -39,8 +39,8 @@ for _, row in df_cliente.iterrows():
 for df in [df_abril, df_maio, df_junho]:
     for _, row in df.iterrows():
         cursor.execute(
-            "INSERT INTO transacao (id_transacao, id_cliente_origem, id_cliente_destino, data_transacao, valor, canal, cidade_transacao, cidade_origem, flag_suspeita, flag_fraude_confirmada) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
-            (row['id_transacao'], row['id_cliente_origem'], row['id_cliente_destino'], row['data_transacao'], row['valor'], row['canal'], row['cidade_transacao'], row['cidade_origem'], row['flag_suspeita'], row['flag_fraude_confirmada'])
+            "INSERT INTO transacao (id_transacao, id_cliente_origem, id_cliente_destino, data_transacao, valor, canal, cidade_transacao, flag_suspeita, flag_fraude_confirmada) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)",
+            (row['id_transacao'], row['id_cliente_origem'], row['id_cliente_destino'], row['data_transacao'], row['valor'], row['canal'], row['cidade_transacao'], row['flag_suspeita'], row['flag_fraude_confirmada'])
         )
 
 

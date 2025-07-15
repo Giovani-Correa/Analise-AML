@@ -1,0 +1,20 @@
+body {
+    background-color: #232323;
+    color: #f5f5f5;
+}
+h1, h2, h3, h4 {
+    color: #ff9800;
+}
+.stButton>button {
+    background-color: #ff9800;
+    color: #232323;
+    border: none;
+}
+.stFileUploader {
+    background-color: #232323;
+    color: #ff9800;
+}
+.stDataFrame {
+    background-color: #232323;
+    color: #f5f5f5;
+}
