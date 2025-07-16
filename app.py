@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+from tratamento.tratamento_geral import tratamento_geral
 
 # Set the page configuration
 st.set_page_config(page_title="CSV Importer", page_icon="📊", layout="wide")
@@ -21,15 +22,17 @@ uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
 if uploaded_file is not None:
     # Read the CSV file
     df = pd.read_csv(uploaded_file)
+
+    df_tratado = tratamento_geral(df)
     
     # Display the dataframe
     st.write("### Data Preview:")
-    st.dataframe(df)
+    st.dataframe(df_tratado)
 
     # Display basic statistics
     st.write("### Basic Statistics:")
-    st.write(df.describe())
+    st.write(df_tratado.describe())
 
     # Optionally, display the shape of the dataframe
     st.write("### Data Shape:")
-    st.write(df.shape)
+    st.write(df_tratado.shape)

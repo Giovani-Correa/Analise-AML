@@ -43,5 +43,11 @@ cursor.execute("""
         flag_fraude_confirmada BOOLEAN NOT NULL,
         FOREIGN KEY (id_cliente_origem) REFERENCES cliente(id_cliente)
     );
+    CREATE TABLE IF NOT EXISTS cadastro (
+        id_usuario INT AUTO_INCREMENT PRIMARY KEY,
+        nome VARCHAR(50) NOT NULL,
+        email VARCHAR(100) NOT NULL UNIQUE,
+        senha VARCHAR(255) NOT NULL,  
+    );
 """)
 
