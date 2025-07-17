@@ -71,14 +71,14 @@ def tratamento_geral(df: pd.DataFrame) -> pd.DataFrame:
     anos_predominantes = df['data_transacao'].dt.year.mode()
     ano_predominante = anos_predominantes[0] if not anos_predominantes.empty else 'desconhecido'
 
-    # Caminho absoluto para salvar o arquivo
-    caminho_saida = os.path.join(base_dir, '..', 'data', 'data_limpos', f'transacoes_{mes_predominante}_{ano_predominante}_limpo2.csv')
-    caminho_saida = os.path.normpath(caminho_saida)
+    # # Caminho absoluto para salvar o arquivo
+    # caminho_saida = os.path.join(base_dir, '..', 'data', 'data_limpos', f'transacoes_{mes_predominante}_{ano_predominante}_limpo2.csv')
+    # caminho_saida = os.path.normpath(caminho_saida)
 
-    # Garante que a pasta existe
-    os.makedirs(os.path.dirname(caminho_saida), exist_ok=True)
+    # # Garante que a pasta existe
+    # os.makedirs(os.path.dirname(caminho_saida), exist_ok=True)
 
-    # Salvar o DataFrame limpo em um novo arquivo CSV
-    df.to_csv(caminho_saida, index=False)
+    # # Salvar o DataFrame limpo em um novo arquivo CSV
+    # df.to_csv(caminho_saida, index=False)
 
     return df
