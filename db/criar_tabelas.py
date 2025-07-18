@@ -38,11 +38,12 @@ cursor.execute("""
         data_transacao DATETIME NOT NULL,
         valor DECIMAL(10,2) NOT NULL,
         canal VARCHAR(50) NOT NULL,
-        dados ENUM("FALSO","REAL") NOT NULL,
         cidade_transacao VARCHAR(50) NOT NULL,
         flag_suspeita BOOLEAN NOT NULL,
         flag_fraude_confirmada BOOLEAN NOT NULL,
+        dado ENUM("FALSO","REAL") NOT NULL,      
         FOREIGN KEY (id_cliente_origem) REFERENCES cliente(id_cliente)
+        
     );
 """)
 
